@@ -5,8 +5,8 @@
     <tr>
       <th>Name</th>
       <th>Detail</th>
-      <th></th>
-      <th></th>
+      <th>Start Date</th>
+      <th>End Date</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +16,9 @@
       <tr>
         <td><%= offering.name %></td>
         <td><%= offering.detail %></td>
+        <td><%= offering.start_date %></td>
+        <td><%= offering.end_date %></td>
+
         <td><%= link_to 'Show', offering %></td>
       </tr>
     <% end %>
