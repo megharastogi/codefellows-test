@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  why_join: MyText
+  previous_programming_exp: MyText
+  best_thing_ever: MyText
+  find_about_cf: MyText
+  phone_number: MyText
+
+two:
+  user_id: 1
+  why_join: MyText
+  previous_programming_exp: MyText
+  best_thing_ever: MyText
+  find_about_cf: MyText
+  phone_number: MyText

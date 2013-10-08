@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @admission_request.user_id %>
+</p>
+
+<p>
+<strong> Applied to</strong>
+<% @admission_request.offerings.each do |o| %>
+  <%=o.name%><br/>
+<% end %>
+
+<p>
+  <strong>Why join:</strong>
+  <%= @admission_request.why_join %>
+</p>
+
+<p>
+  <strong>Previous programming exp:</strong>
+  <%= @admission_request.previous_programming_exp %>
+</p>
+
+<p>
+  <strong>Best thing ever:</strong>
+  <%= @admission_request.best_thing_ever %>
+</p>
+
+<p>
+  <strong>Find about cf:</strong>
+  <%= @admission_request.find_about_cf %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @admission_request.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_admission_request_path(@admission_request) %> |
+<%= link_to 'Back', admission_requests_path %>

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131008002504) do
+ActiveRecord::Schema.define(version: 20131008030607) do
+
+  create_table "admission_requests", force: true do |t|
+    t.integer  "user_id"
+    t.text     "why_join"
+    t.text     "previous_programming_exp"
+    t.text     "best_thing_ever"
+    t.text     "find_about_cf"
+    t.text     "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admission_requests_offerings", id: false, force: true do |t|
+    t.integer "admission_request_id"
+    t.integer "offering_id"
+  end
 
   create_table "offerings", force: true do |t|
     t.string   "name"

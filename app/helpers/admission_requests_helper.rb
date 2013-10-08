@@ -1,0 +1,2 @@
+module AdmissionRequestsHelper
+end

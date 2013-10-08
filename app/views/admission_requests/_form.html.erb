@@ -1,0 +1,44 @@
+<%= form_for(@admission_request) do |f| %>
+  <% if @admission_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admission_request.errors.count, "error") %> prohibited this admission_request from being saved:</h2>
+
+      <ul>
+      <% @admission_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% for offer in Offering.all %>
+  <div>
+  <%= check_box_tag "admission_request[offering_ids][]", offer.id %>
+  <%= offer.name %>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :why_join %><br>
+    <%= f.text_area :why_join %>
+  </div>
+  <div class="field">
+    <%= f.label :previous_programming_exp %><br>
+    <%= f.text_area :previous_programming_exp %>
+  </div>
+  <div class="field">
+    <%= f.label :best_thing_ever %><br>
+    <%= f.text_area :best_thing_ever %>
+  </div>
+  <div class="field">
+    <%= f.label :find_about_cf %><br>
+    <%= f.text_area :find_about_cf %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_area :phone_number %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

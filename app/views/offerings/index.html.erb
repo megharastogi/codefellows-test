@@ -17,8 +17,6 @@
         <td><%= offering.name %></td>
         <td><%= offering.detail %></td>
         <td><%= link_to 'Show', offering %></td>
-        <td><%= link_to 'Edit', edit_offering_path(offering) %></td>
-        <td><%= link_to 'Destroy', offering, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,13 @@
 
 <br>
 
-<%= link_to 'New Offering', new_offering_path %>
+<%#= link_to 'New Offering', new_offering_path %>
+
+
+<% if current_user %>
+  <% if current_user.admission_request%>
+    <%= link_to "View application",admission_request_path(current_user.admission_request)%>
+  <%else %>
+    <%= link_to "Apply now",new_admission_request_path%>
+  <% end %>
+<% end %>

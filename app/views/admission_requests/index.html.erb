@@ -1,0 +1,38 @@
+<h1>Listing admission_requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Why join</th>
+      <th>Previous programming exp</th>
+      <th>Best thing ever</th>
+      <th>Find about cf</th>
+      <th>Phone number</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admission_requests.each do |admission_request| %>
+      <tr>
+        <td><%= admission_request.user_id %></td>
+        <td><%= admission_request.why_join %></td>
+        <td><%= admission_request.previous_programming_exp %></td>
+        <td><%= admission_request.best_thing_ever %></td>
+        <td><%= admission_request.find_about_cf %></td>
+        <td><%= admission_request.phone_number %></td>
+        <td><%= link_to 'Show', admission_request %></td>
+        <td><%= link_to 'Edit', edit_admission_request_path(admission_request) %></td>
+        <td><%= link_to 'Destroy', admission_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if @admission_requests.size == 0 %>
+<%= link_to 'New Admission request', new_admission_request_path %>
+<% end %>
