@@ -64,6 +64,18 @@ CodefellowsTest::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  # Mailer configuration.
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default charset: "utf-8"
+  config.action_mailer.default_url_options = { :host => 'glacial-sands-2463.herokuapp.com' }
+    ActionMailer::Base.smtp_settings = {
+      :address        => "smtp.sendgrid.net",
+      :port           => "25",
+      :authentication => :plain,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => ENV['SENDGRID_DOMAIN']
+    }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).

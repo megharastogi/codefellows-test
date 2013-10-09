@@ -26,7 +26,7 @@ class Devise::SessionsController < DeviseController
           if resource.valid_password?(params[:user][:password])
             sign_in("user", resource)
             resource.ensure_authentication_token!  #make sure the user has a token generated
-            render :json=>{ token: resource.authentication_token, status: :created}
+            render :json=>{ token: resource.authentication_token, status: :created, user_id: resource.id }
             return
           end
           invalid_login_attempt
