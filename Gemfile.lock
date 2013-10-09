@@ -59,7 +59,6 @@ GEM
     mime-types (1.25)
     minitest (4.7.5)
     multi_json (1.8.1)
-    mysql2 (0.3.13)
     orm_adapter (0.4.0)
     pg (0.17.0)
     polyglot (0.3.3)
@@ -123,7 +122,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
-  mysql2
   pg
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

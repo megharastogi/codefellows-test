@@ -1,0 +1,25 @@
+LOG:  database system was shut down at 2013-10-08 14:08:21 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+ERROR:  relation "users" already exists
+STATEMENT:  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "created_at" timestamp, "updated_at" timestamp) 
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-10-09 14:03:35 PDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  column "confirmed_at" of relation "users" already exists
+STATEMENT:  ALTER TABLE "users" ADD COLUMN "confirmed_at" timestamp
+ERROR:  column "confirmed_at" of relation "users" already exists
+STATEMENT:  ALTER TABLE "users" ADD COLUMN "confirmed_at" timestamp
+ERROR:  database "codefellows-test_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "codefellows-test_development"
+ERROR:  column "confirmed_at" of relation "users" already exists
+STATEMENT:  ALTER TABLE "users" ADD COLUMN "confirmed_at" timestamp
+FATAL:  database "codefellows-test_development" does not exist

@@ -1,0 +1,2 @@
+rvm use ruby-2.0.0
+rvm gemset use ruby2ios_class_app
