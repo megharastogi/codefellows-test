@@ -6,7 +6,7 @@ CodefellowsTest::Application.routes.draw do
   resources :offerings
 
   devise_for :users
-  get '/delete_user' => 'admission_requests#delete_user', as: 'delete_user'
+  get '/admission_requests' => 'admission_requests#delete_user', as: 'delete_user'
 
   devise_scope :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
