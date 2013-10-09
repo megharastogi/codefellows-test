@@ -1,4 +1,6 @@
 CodefellowsTest::Application.routes.draw do
+  resources :questions
+
   resources :admission_requests
 
   resources :offerings
