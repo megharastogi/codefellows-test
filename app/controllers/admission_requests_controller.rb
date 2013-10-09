@@ -1,11 +1,12 @@
 class AdmissionRequestsController < ApplicationController
-  before_filter :check_logged_in_user
+  before_filter :check_logged_in_user, except: :index
   before_action :set_admission_request, only: [:show, :edit, :update, :destroy]
 
   # GET /admission_requests
   # GET /admission_requests.json
   def index
-    @admission_requests = AdmissionRequest.where(:user_id => current_user.id)
+    @admission_requests = AdmissionRequest.all
+    #@admission_requests = AdmissionRequest.where(:user_id => current_user.id)
   end
 
   # GET /admission_requests/1
