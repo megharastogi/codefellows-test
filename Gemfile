@@ -9,6 +9,12 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+group :development, :test do
+  gem 'pry-debugger' #enable binding.pry for troubleshooting
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

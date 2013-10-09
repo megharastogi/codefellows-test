@@ -1,5 +1,5 @@
 class AdmissionRequestsController < ApplicationController
-  before_filter :check_logged_in_user, except: :index
+  before_filter :check_logged_in_user, except: [:index, :delete_user]
   before_action :set_admission_request, only: [:show, :edit, :update, :destroy]
 
   # GET /admission_requests
@@ -74,6 +74,7 @@ class AdmissionRequestsController < ApplicationController
   # Ability for admin to delete a user
   def delete_user
     user_id = params[:format]
+    binding.pry
     User.find(user_id).destroy
     redirect_to user_sessions_path
   end
