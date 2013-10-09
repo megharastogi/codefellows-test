@@ -74,7 +74,6 @@ class AdmissionRequestsController < ApplicationController
   # Ability for admin to delete a user
   def delete_user
     user_id = params[:format]
-    binding.pry
     User.find(user_id).destroy
     redirect_to user_sessions_path
   end
