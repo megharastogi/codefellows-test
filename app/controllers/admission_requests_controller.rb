@@ -5,6 +5,7 @@ class AdmissionRequestsController < ApplicationController
   # GET /admission_requests
   # GET /admission_requests.json
   def index
+    @users = User.all
     @admission_requests = AdmissionRequest.all
     #@admission_requests = AdmissionRequest.where(:user_id => current_user.id)
   end

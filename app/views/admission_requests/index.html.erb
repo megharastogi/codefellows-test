@@ -34,3 +34,36 @@
 
 <br>
 
+<hr>
+
+<%- model_class = User -%>
+<h2 class="text-info">User Login/Session Report</h2><br>
+<div class="container">
+  <div class="span6">
+    <table class="table table-striped table-condensed table-hover">
+      <thead>
+        <tr>
+          <th>User Email</th>
+          <th>Last Sign In</th>
+          <th>Sign In Count</th>
+          <th>Confirmed At</th>
+          <th>Confirmation Token</th>
+          <th>Authentication Token</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.last_sign_in_at %></td>
+            <td><%= user.sign_in_count %></td>
+            <td><%= user.confirmed_at %></td>
+            <td><%= user.confirmation_token %></td>
+            <td><%= user.authentication_token %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
