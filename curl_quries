@@ -1,0 +1,4 @@
+curl -i -H "Content-Type: application/json" -H "Accept: application/json" -X POST -d '{"user":{"email":"email@gmail.com","password":"password"}}' http://localhost:3000/admission_requests/1
+
+
+curl -i -H "Content-Type: application/json" -H "Accept: application/json" -X GET -d {} http://localhost:3000/admission_requests/1?auth_token=mTz6YrueradEQsnMsDNY

@@ -20,7 +20,16 @@ class Devise::SessionsController < DeviseController
           respond_with resource, :location => after_sign_in_path_for(resource)
         }
         format.json {
-          render :json => {:status => 201, :success=> true }
+          resource = User.find_for_database_authentication(:email=>params[:user][:email])
+          return invalid_login_attempt unless resource
+       
+          if resource.valid_password?(params[:user][:password])
+            sign_in("user", resource)
+            resource.ensure_authentication_token!  #make sure the user has a token generated
+            render :json=>{ token: resource.authentication_token, status: :created}
+            return
+          end
+          invalid_login_attempt
         }
     end
     
@@ -55,6 +64,12 @@ class Devise::SessionsController < DeviseController
 
   def auth_options
     { :scope => resource_name, :recall => "#{controller_path}#new" }
+  end
+
+  def invalid_login_attempt
+    warden.custom_failure!
+    render json: "Error with your login or password", status: :unprocessable_entity 
+
   end
 end
 
